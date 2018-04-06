@@ -25,7 +25,9 @@ int main()
     a=Concat(t," abc");
     printf("%s\n\n",a);
 
-    //
+    //length check
+    int l=Length(a);
+    printf("%d\n\n",l);
 
     return 0;
 }
