@@ -10,7 +10,7 @@
 int main()
 {
     char *t=alc(50);
-    t="To be or not to be\0";
+    strcpy(t,"To be or not to be");
     //substr check
     char *s1=alc(50);
     s1=SubStr(t,1,5);
