@@ -1,11 +1,15 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<conio.h>
+
 #include "SubString.h"
 #include "INDEX.h"
 #include "Concate.h"
 #include "Length.h"
 #include "Delet.h"
+#include "Insert.h"
+#include "Replace.h"
 
 #define P printf
 #define alc(x) ((char *)malloc(x))
@@ -30,32 +34,42 @@ int main()
     P("/*******************     end    *************************/\n\n\n\n");
 
 
-    P("/*******************substr check*************************/\n\n");//index check
+    P("/*******************index check*************************/\n\n");
     int k=Index(t,"or\0");
     printf("Pattern found at index: %d\n\n",k+1);
     P("/*******************     end    *************************/\n\n\n\n");
 
 
-    P("/*******************substr check*************************/\n\n");//concatenation check
+    P("/*******************concatenation check*************************/\n\n");
     char *a=alc(500);
     a=Concat(t," abc\0");
     printf("%s\n\n",a);
     P("/*******************     end    *************************/\n\n\n\n");
 
 
-    P("/*******************substr check*************************/\n\n");//length check
+    P("/*******************length check*************************/\n\n");
     int l=Length(a);
     printf("Length of str a is : %d\n\n",l);
     P("/*******************     end    *************************/\n\n\n\n");
 
 
-    P("/*******************substr check*************************/\n\n");//delete checking
+    P("/*******************delete check*************************/\n\n");
     strcpy(a,"Arnab is great");
     printf("%s\n\n",a);
     a=Delete(a,5,4);
     printf("%s\n\n",a);
     P("/*******************     end    *************************/\n\n\n\n");
 
+
+    P("/*******************insert check*************************/\n\n");
+    strcpy(a,"Arnab is great");
+    printf("%s\n\n",a);
+    a=Insert(a," are",6);
+    printf("%s\n\n",a);
+    P("/*******************     end    *************************/\n\n\n\n");
+
+    a=Rep(a," are"," is");/**this needs work***/
+    printf("%s\n\n",a);
 
     return 0;
 }
